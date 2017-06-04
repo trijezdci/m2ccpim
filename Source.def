@@ -1,13 +1,16 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2Source;
+DEFINITION MODULE Source;
 
 (* Modula-2 Source File Reader *)
 
-FROM M2String IMPORT String;
+FROM String IMPORT StringT;
 
 
-TYPE Source (* = OPAQUE *);
+TYPE Source; (* OPAQUE *)
+
+TYPE SourceT = Source; (* for unqualified use *)
+
 
 TYPE Status =
   ( Success,
@@ -71,7 +74,7 @@ TYPE Status =
 (* Operations *)
 
 PROCEDURE New
-  ( VAR s : Source; CONST filename : String; VAR status : Status );
+  ( VAR s : Source; filename : StringT; VAR status : Status );
 (* Passes back a newly allocated source instance associated with name in s.
    The associated file is opened for reading and the lookahead position is
    set to the start position.  Passes back NIL in s if unsuccessful.
@@ -83,7 +86,7 @@ PROCEDURE GetChar ( s : Source; VAR ch, next : CHAR );
    Passes back the new lookahead character in next without consuming it. *)
 
 
-PROCEDURE consumeChar ( s : source ) : CHAR;
+PROCEDURE consumeChar ( s : Source ) : CHAR;
 (* Consumes the current character of s, returns new lookahead character. *)
 
 
@@ -121,4 +124,4 @@ PROCEDURE Release ( VAR s : Source; VAR status : Status );
    The status of the operation is passed back in status. *)
 
 
-END M2Source.
+END Source.
