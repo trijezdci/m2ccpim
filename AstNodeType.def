@@ -138,6 +138,8 @@ TYPE AstNodeType =
   Filename,           (* filename node type *)
   Options);           (* compiler option list node type *)
 
+TYPE AstNodeTypeT = AstNodeType; (* for unqualified use *)
+
 
 (* Introspection *)
 
