@@ -1,22 +1,24 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2Symbol;
+DEFINITION MODULE Symbol;
 
 (* Symbol Definition for Modula-2 R10 Core Compiler *)
 
-FROM M2Token IMPOPRT Token;
-FROM LexTab IMPOPRT Lexeme;
-FROM M2Diag IMPOPRT Diagnostic;
+FROM Token IMPORT TokenT;
+FROM LexTab IMPORT LexemeT;
+FROM Diag IMPORT Diagnostic;
 
 
 (* Symbol to be returned by lexer *)
 
 TYPE Symbol = RECORD
-  token : Token;
+  token : TokenT;
   line, col : CARDINAL;
-  lexeme : Lexeme;
+  lexeme : LexemeT;
   diagnostic : Diagnostic
 END; (* Symbol *)
 
+TYPE SymbolT = Symbol; (* for unqualified use *)
 
-END M2Symbol.
+
+END Symbol.
