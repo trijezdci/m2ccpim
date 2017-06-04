@@ -1,6 +1,6 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2Token;
+DEFINITION MODULE Token;
 
 (* Token Definitions for Modula-2 R10 Core Compiler *)
 
@@ -167,6 +167,8 @@ TYPE Token =
   
   (* End Of File Marker *)
     EOF );         (* 127 *)
+  
+TYPE TokenT = Token; (* for unqualified use *)
 
 
 (* Functions To Determine Token Classification *)
@@ -205,4 +207,4 @@ PROCEDURE isPragma ( t : Token ) : BOOLEAN;
  (* Returns TRUE if t is a pragma, otherwise FALSE. *)
 
 
-END M2Token.
+END Token.
