@@ -1,13 +1,15 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2TokenSet;
+DEFINITION MODULE TokenSet;
 
 (* Token Set ADT for Modula-2 R10 Core Compiler *)
 
-FROM M2Token IMPORT Token;
+FROM Token IMPORT TokenT;
 
 
 TYPE TokenSet; (* OPAQUE *)
+
+TYPE TokenSetT = TokenSet; (* for unqualified use *)
 
 
 (* Operations *)
@@ -28,16 +30,16 @@ PROCEDURE New
     If the bitwidth of type LONGINT is larger than 32, any higher bits are
     ignored.  The procedure passes back NIL if allocation is unsuccessful. *)
 
-PROCEDURE Insert ( set : TokenSet; token : Token );
+PROCEDURE Insert ( set : TokenSet; token : TokenT );
 (* Inserts token into set. *)
 
-PROCEDURE Remove ( set : TokenSet; token : Token );
+PROCEDURE Remove ( set : TokenSet; token : TokenT );
 (* Removes token from set. *)
 
 PROCEDURE isEmpty ( set : TokenSet ) : BOOLEAN;
 (* Returns TRUE if set is empty, otherwise FALSE. *)
 
-PROCEDURE isElem ( set : TokenSet; token : Token ) : BOOLEAN;
+PROCEDURE isElem ( set : TokenSet; token : TokenT ) : BOOLEAN;
 (* Returns TRUE if token is an element of set, otherwise FALSE. *)
 
 PROCEDURE count ( set : TokenSet ) : CARDINAL;
@@ -53,4 +55,4 @@ PROCEDURE Release ( VAR set : TokenSet );
 (* Releases set and passes back NIL if successful. *)
 
 
-END M2TokenSet.
+END TokenSet.
