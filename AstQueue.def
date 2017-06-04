@@ -9,6 +9,8 @@ FROM AST IMPORT AST;
 
 TYPE AstQueue; (* OPAQUE *)
 
+TYPE AstQueueT = AstQueue; (* for unqualified use *)
+
 
 (* Operations  *)
 
