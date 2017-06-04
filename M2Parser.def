@@ -1,11 +1,11 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2Parser;
+DEFINITION MODULE Parser;
 
 (* Parser for Modula-2 R10 Core Compiler *)
 
 
-FROM M2AST IMPORT AST;
+FROM AST IMPORT AstT;
 
 
 (* Return Status *)
@@ -26,13 +26,13 @@ END;
 (* Operations *)
 
 PROCEDURE parseDef
-  ( source : Filename; VAR stats : Statistics; VAR status : Status ) : AST;
+  ( source : Filename; VAR stats : Statistics; VAR status : Status ) : AstT;
 (* Parses .def source file, returns AST on success, NIL on failure. *)
 
 
 PROCEDURE parseMod
-  ( source : Filename; VAR stats : Statistics; VAR status : Status ) : AST;
+  ( source : Filename; VAR stats : Statistics; VAR status : Status ) : AstT;
 (* Parses .mod source file, returns AST on success, NIL on failure. *)
 
 
-END M2Parser.
+END Parser.
