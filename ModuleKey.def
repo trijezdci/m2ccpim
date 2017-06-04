@@ -12,12 +12,14 @@ CONST
 
 (* Key Type *)
 
-TYPE Key = ARRAY [0..KeySize] OF CHAR;
+TYPE ModuleKey = ARRAY [0..KeySize] OF CHAR;
+
+TYPE ModuleKeyT = ModuleKey; (* for unqualified use *)
 
 
 (* Key Generator *)
 
-PROCEDURE GenKey ( VAR key : Key; forBuffer : ARRAY OF CHAR ); 
+PROCEDURE GenKey ( VAR key : ModuleKey; forBuffer : ARRAY OF CHAR ); 
 
 
 END ModuleKey.
