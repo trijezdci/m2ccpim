@@ -1,16 +1,18 @@
 (*!m2pim*) (* Copyright (c) 2015 B.Kowarsch. All rights reserved. *)
 
-DEFINITION MODULE M2Lexer;
+DEFINITION MODULE Lexer;
 
 (* Lexer for Modula-2 R10 Core Compiler *)
 
 
-FROM M2Symbol IMPORT Symbol;
+FROM Symbol IMPORT SymbolT;
 
 
 (* Lexer Type *)
 
 TYPE Lexer; (* OPAQUE *)
+
+TYPE LexerT = Lexer; (* for unqualified use *)
 
 
 (* Lexer Status *)
@@ -56,4 +58,4 @@ PROCEDURE status ( lexer : Lexer ) : Status;
 PROCEDURE Release ( VAR lexer : Lexer );
  (* Release lexer instance. Passes back NIL in lexer if successful. *)
 
-END M2Lexer.
+END Lexer.
