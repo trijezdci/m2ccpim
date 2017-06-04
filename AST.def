@@ -10,6 +10,8 @@ FROM AstNodeType IMPORT AstNodeType;
 
 TYPE AST; (* OPAQUE *)
 
+Type AstT = AST; (* for unqualified use *)
+
 
 (* Operations *)
 
