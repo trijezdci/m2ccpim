@@ -9,6 +9,8 @@ FROM LexTab IMPORT Lexeme;
 
 TYPE LexQueue; (* OPAQUE *)
 
+TYPE LexQueueT = LexQueue; (* for unqualified use *)
+
 
 (* Operations *)
 
