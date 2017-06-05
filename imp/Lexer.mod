@@ -102,7 +102,7 @@ PROCEDURE GetSym ( lexer : Lexer; VAR sym, next : SymbolT );
 BEGIN
   
   (* nextSymbol holds current lookahead, pass it back in sym *)
-  sym := self^.nextSymbol;
+  sym := lexer^.nextSymbol;
   
   (* consume the current lookahead,
      read the new lookahead symbol, pass it back in next *)
